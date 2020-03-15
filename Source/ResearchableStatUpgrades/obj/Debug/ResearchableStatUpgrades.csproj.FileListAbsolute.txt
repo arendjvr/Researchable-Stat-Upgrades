@@ -1,2 +1,0 @@
-d:\System\playground\rimworldmods\Researchable-Stat-Upgrades\Source\ResearchableStatUpgrades\obj\Debug\ResearchableStatUpgrades.csprojAssemblyReference.cache
-d:\System\playground\rimworldmods\Researchable-Stat-Upgrades\Source\ResearchableStatUpgrades\obj\Debug\ResearchableStatUpgrades.csproj.CoreCompileInputs.cache

@@ -132,6 +132,4 @@ namespace ResearchableStatUpgrades
             WorldComp.AddEditor(Editor, false);
         }
     }
-
-    public class TakeShit : CompProperties_LongRangeMineralScanner { }
 }
