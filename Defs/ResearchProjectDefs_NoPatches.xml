@@ -67,7 +67,7 @@
 	<ResearchProjectDef>
 		<defName>ScannerEfficiency</defName>
 		<label>Scanner Efficiency</label>
-		<description>Long range mineral scanner takes half the amount of time (15 days) to detect a faraway resource. However, their range is consequently increased to 45 tiles.</description>
+		<description>Long range and deep mineral scanners takes half the amount of time (2 days) to detect resources.</description>
 		<baseCost>3000</baseCost>
 		<techLevel>Spacer</techLevel>
         <tab>StatUpgrades</tab>
@@ -77,14 +77,27 @@
             <li Class="ResearchableStatUpgrades.ResearchMod_EditCompProperties">
                 <def>LongRangeMineralScanner</def>
                 <type>CompProperties_LongRangeMineralScanner</type>
-                <fieldName>mtbDays</fieldName>
-                <value>15</value>
+                <fieldName>scanFindMtbDays</fieldName>
+                <value>2</value>
             </li>
             <li Class="ResearchableStatUpgrades.ResearchMod_EditCompProperties">
                 <def>LongRangeMineralScanner</def>
                 <type>CompProperties_LongRangeMineralScanner</type>
-                <fieldName>radius</fieldName>
-                <value>45</value>
+                <fieldName>scanFindGuaranteedDays</fieldName>
+                <value>4</value>
+            </li>
+
+            <li Class="ResearchableStatUpgrades.ResearchMod_EditCompProperties">
+                <def>GroundPenetratingScanner</def>
+                <type>CompProperties_ScannerMineralsDeep</type>
+                <fieldName>scanFindMtbDays</fieldName>
+                <value>2</value>
+            </li>
+            <li Class="ResearchableStatUpgrades.ResearchMod_EditCompProperties">
+                <def>GroundPenetratingScanner</def>
+                <type>CompProperties_ScannerMineralsDeep</type>
+                <fieldName>scanFindGuaranteedDays</fieldName>
+                <value>4</value>
             </li>
         </researchMods>
         <prerequisites>

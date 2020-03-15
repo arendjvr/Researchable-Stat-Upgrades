@@ -25,7 +25,7 @@ namespace ResearchableStatUpgrades
             float factorBase = 1f;
             TransformValue(req, ref factorBase);
             string str = factorBase.ToStringPercent();
-            return str == "100%" ? string.Empty : "RSU_FactorFromResearch".Translate() + str;
+            return str == "100%" ? new TaggedString(string.Empty) : "RSU_FactorFromResearch".Translate() + str;
         }
 
         public override void TransformValue(StatRequest req, ref float val)

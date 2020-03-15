@@ -121,7 +121,6 @@ namespace ResearchableStatUpgrades
         {
             WorldComp = comp;
             FieldInfo fieldInfo = type.GetField(fieldName, RSUUtil.universal);
-            
             var compProps = def.comps.Find(c => c.GetType() == type || c.GetType().IsSubclassOf(type));
             if (compProps == null)
             {
@@ -133,4 +132,6 @@ namespace ResearchableStatUpgrades
             WorldComp.AddEditor(Editor, false);
         }
     }
+
+    public class TakeShit : CompProperties_LongRangeMineralScanner { }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Verse;
-using Harmony;//Only for research temp fix
+using HarmonyLib;//Only for research temp fix
 using System.Reflection.Emit;
 
 namespace ResearchableStatUpgrades
@@ -61,10 +61,10 @@ namespace ResearchableStatUpgrades
     [HarmonyPatch(typeof(Thing), nameof(Thing.SpawnSetup)), StaticConstructorOnStartup]
     static class Patch
     {
-        public static readonly HarmonyInstance inst;
+        public static readonly Harmony inst;
         static Patch()
         {
-            inst = HarmonyInstance.Create("com.spdskatr.rsu.fixes");
+            inst = new Harmony("com.spdskatr.rsu.fixes");
             inst.Patch(typeof(Thing).GetMethod("SpawnSetup"), null, null, HarMetCtor("Transpiler1"));
             inst.Patch(typeof(CompUseEffect_Artifact).GetMethod("DoEffect"), null, null, HarMetCtor("Transpiler2"));
             inst.Patch(typeof(CompUseEffect_LearnSkill).GetMethod("DoEffect"), null, null, HarMetCtor("Transpiler2"));
