@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName = "MiningSpeed"]</xpath>
         <value>
             <parts>
@@ -28,6 +29,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName = "MiningYield"]</xpath>
         <value>
             <parts>
@@ -47,7 +49,10 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName = "MiningYield"]/maxValue</xpath>
-        <value><maxValue>9999999</maxValue></value>
+        <value>
+            <maxValue>9999999</maxValue>
+        </value>
     </Operation>
 </Patch>

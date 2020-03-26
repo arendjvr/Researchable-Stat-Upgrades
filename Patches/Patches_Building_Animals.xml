@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="AnimalGatherSpeed"]</xpath>
         <value>
             <parts>
@@ -20,6 +21,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="AnimalGatherYield"]</xpath>
         <value>
             <parts>
@@ -39,10 +41,14 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="AnimalGatherYield"]/maxValue</xpath>
-        <value><maxValue>9999999</maxValue></value>
+        <value>
+            <maxValue>9999999</maxValue>
+        </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
         <value>
             <parts>
@@ -62,6 +68,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="ConstructSuccessChance"]</xpath>
         <value>
             <parts>

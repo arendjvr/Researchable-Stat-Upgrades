@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="NegotiationAbility"]</xpath>
         <value>
             <parts>
@@ -16,18 +17,19 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="MeatAmount"]/parts</xpath>
         <value>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>MeatCutCharts</def>
-                            <factor>1.125</factor>
-                            <applyToNonColonistFaction>true</applyToNonColonistFaction>
-                            <applyToNonHumanlike>true</applyToNonHumanlike>
-                        </li>
-                    </researchFactors>
-                </li>
+            <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+                <researchFactors>
+                    <li>
+                        <def>MeatCutCharts</def>
+                        <factor>1.125</factor>
+                        <applyToNonColonistFaction>true</applyToNonColonistFaction>
+                        <applyToNonHumanlike>true</applyToNonHumanlike>
+                    </li>
+                </researchFactors>
+            </li>
         </value>
     </Operation>
 </Patch>

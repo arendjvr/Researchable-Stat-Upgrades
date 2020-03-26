@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="MeleeHitChance" or defName="MeleeDodgeChance"]</xpath>
         <value>
             <parts>
@@ -20,6 +21,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="ShootingAccuracyPawn"]</xpath>
         <value>
             <parts>
@@ -35,6 +37,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/StatDef[defName="AimingDelayFactor"]</xpath>
         <value>
             <parts>
