@@ -1,6 +1,6 @@
 Steam download location: https://steamcommunity.com/sharedfiles/filedetails/?id=2034010625
 
-Steam uploaders' discord-channel: https://discord.gg/SuhwVpM
+Steam uploaders' discord-channel: https://invite.gg/mlie
 
 This mod is pretty much the same as Spdskatr's original, it has only been updated for 1.1.
 
