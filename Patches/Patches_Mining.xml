@@ -30,22 +30,20 @@
     </Operation>
     <Operation Class="PatchOperationAdd">
         <success>Always</success>
-        <xpath>/Defs/StatDef[defName = "MiningYield"]</xpath>
+        <xpath>/Defs/StatDef[defName = "MiningYield"]/parts</xpath>
         <value>
-            <parts>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>AdvMiningIII</def>
-                            <factor>1.075</factor>
-                        </li>
-                        <li>
-                            <def>AdvMiningIV</def>
-                            <factor>1.1</factor>
-                        </li>
-                    </researchFactors>
-                </li>
-            </parts>
+			<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+				<researchFactors>
+					<li>
+						<def>AdvMiningIII</def>
+						<factor>1.075</factor>
+					</li>
+					<li>
+						<def>AdvMiningIV</def>
+						<factor>1.1</factor>
+					</li>
+				</researchFactors>
+			</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
