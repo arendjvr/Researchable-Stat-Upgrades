@@ -7,6 +7,9 @@
 		<supportedVersions>
         <li>1.1</li>
     </supportedVersions>
+	<loadBefore>
+		<li>FLASHPOINT55.RPGStyleLevelUpMod</li>
+	</loadBefore>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
