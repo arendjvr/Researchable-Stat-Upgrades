@@ -1,86 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationAdd">
-        <success>Always</success>
-        <xpath>/Defs/StatDef[defName="AnimalGatherSpeed"]</xpath>
-        <value>
-            <parts>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>AnimalsI</def>
-                            <factor>1.05</factor>
-                        </li>
-                        <li>
-                            <def>AnimalsII</def>
-                            <factor>1.05</factor>
-                        </li>
-                    </researchFactors>
-                </li>
-            </parts>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <success>Always</success>
-        <xpath>/Defs/StatDef[defName="AnimalGatherYield"]</xpath>
-        <value>
-            <parts>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>AnimalsI</def>
-                            <factor>1.025</factor>
-                        </li>
-                        <li>
-                            <def>AnimalsII</def>
-                            <factor>1.5</factor>
-                        </li>
-                    </researchFactors>
-                </li>
-            </parts>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <success>Always</success>
-        <xpath>/Defs/StatDef[defName="AnimalGatherYield"]/maxValue</xpath>
-        <value>
-            <maxValue>9999999</maxValue>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <success>Always</success>
-        <xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
-        <value>
-            <parts>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>ConstructionI</def>
-                            <factor>1.05</factor>
-                        </li>
-                        <li>
-                            <def>ConstructionII</def>
-                            <factor>1.075</factor>
-                        </li>
-                    </researchFactors>
-                </li>
-            </parts>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <success>Always</success>
-        <xpath>/Defs/StatDef[defName="ConstructSuccessChance"]</xpath>
-        <value>
-            <parts>
-                <li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-                    <researchFactors>
-                        <li>
-                            <def>ConstructionII</def>
-                            <factor>1.05</factor>
-                        </li>
-                    </researchFactors>
-                </li>
-            </parts>
-        </value>
-    </Operation>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationConditional">
+				<success>Always</success>
+				<xpath>/Defs/StatDef[defName="AnimalGatherSpeed"]</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/StatDef[defName="AnimalGatherSpeed"]</xpath>
+					<value>
+						<parts/>
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/StatDef[defName = "AnimalGatherSpeed"]/parts</xpath>
+				<value>
+					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+						<researchFactors>
+							<li>
+								<def>AnimalsI</def>
+								<factor>1.05</factor>
+							</li>
+							<li>
+								<def>AnimalsII</def>
+								<factor>1.05</factor>
+							</li>
+						</researchFactors>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationConditional">
+				<success>Always</success>
+				<xpath>/Defs/StatDef[defName="AnimalGatherYield"]/parts</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/StatDef[defName="AnimalGatherYield"]</xpath>
+					<value>
+						<parts/>
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/StatDef[defName = "AnimalGatherYield"]/parts</xpath>
+				<value>
+					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+						<researchFactors>
+							<li>
+								<def>AnimalsI</def>
+								<factor>1.025</factor>
+							</li>
+							<li>
+								<def>AnimalsII</def>
+								<factor>1.5</factor>
+							</li>
+						</researchFactors>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<success>Always</success>
+		<xpath>/Defs/StatDef[defName = "AnimalGatherYield"]/maxValue</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>/Defs/StatDef[defName="AnimalGatherYield"]/maxValue</xpath>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationConditional">
+				<success>Always</success>
+				<xpath>/Defs/StatDef[defName="ConstructionSpeed"]/parts</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
+					<value>
+						<parts/>
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/StatDef[defName = "ConstructionSpeed"]/parts</xpath>
+				<value>
+					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+						<researchFactors>
+							<li>
+								<def>ConstructionI</def>
+								<factor>1.05</factor>
+							</li>
+							<li>
+								<def>ConstructionII</def>
+								<factor>1.075</factor>
+							</li>
+						</researchFactors>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationConditional">
+				<success>Always</success>
+				<xpath>/Defs/StatDef[defName="ConstructSuccessChance"]/parts</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/StatDef[defName="ConstructSuccessChance"]</xpath>
+					<value>
+						<parts/>
+					</value>
+				</nomatch>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/StatDef[defName = "ConstructSuccessChance"]/parts</xpath>
+				<value>
+					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
+						<researchFactors>
+							<li>
+								<def>ConstructionII</def>
+								<factor>1.05</factor>
+							</li>
+						</researchFactors>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
 </Patch>
