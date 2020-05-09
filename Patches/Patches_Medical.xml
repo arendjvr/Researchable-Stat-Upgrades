@@ -12,7 +12,7 @@
 					</value>
 				</nomatch>
 			</li>
-						<li Class="PatchOperationConditional">
+			<li Class="PatchOperationConditional">
 				<success>Always</success>
 				<xpath>/Defs/StatDef[defName="MedicalSurgerySuccessChance"]/parts</xpath>
 				<nomatch Class="PatchOperationAdd">
@@ -54,27 +54,6 @@
 					</value>
 				</nomatch>
 			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/StatDef[defName = "MedicalTendSpeed"]/parts</xpath>
-				<value>
-					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
-						<researchFactors>
-							<li>
-								<def>MedicalI</def>
-								<factor>1.5</factor>
-							</li>
-							<li>
-								<def>MedicalII</def>
-								<factor>1.075</factor>
-							</li>
-						</researchFactors>
-					</li>
-				</value>
-			</li>
-		</operations>
-	</Operation>
-	<Operation Class="PatchOperationSequence">
-		<operations>
 			<li Class="PatchOperationConditional">
 				<success>Always</success>
 				<xpath>/Defs/StatDef[defName="MedicalOperationSpeed"]/parts</xpath>
@@ -86,7 +65,7 @@
 				</nomatch>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/StatDef[defName = "MedicalOperationSpeed"]/parts</xpath>
+				<xpath>/Defs/StatDef[defName = "MedicalTendSpeed" or defName = "MedicalOperationSpeed"]/parts</xpath>
 				<value>
 					<li Class="ResearchableStatUpgrades.StatPart_ResearchDependent">
 						<researchFactors>
